@@ -1,13 +1,7 @@
- var breadTotal = 0;
- var flatTotal = 0;
- var wrapTotal = 0;
- var saladTotal = 0;
+$( document ).ready(function() {
+    if(localStorage.getItem("data") != null) populateFields();
+});
 
- var freezerBread = 0;
- var freezerFlat = 0;
- var freezerCross = 0;
- var freezerWrap = 0;
- 
  function countBread(){
    var breadBox = parseFloat(document.getElementById("breadBox").value);
    var breadOpen = parseFloat(document.getElementById("breadOpen").value);
@@ -17,45 +11,44 @@
    var crossOpen = parseFloat(document.getElementById("crossOpen").value);
    var wrapBox = parseFloat(document.getElementById("wrapBox").value);
    var wrapOpen = parseFloat(document.getElementById("wrapOpen").value);
-   var breadFront = parseFloat(document.getElementById("breadFront").value)
-   var flatFront = parseFloat(document.getElementById("flatFront").value)
-   var crossFront = parseFloat(document.getElementById("crossFront").value)
-   var saladBag = parseFloat(document.getElementById("saladBag").value)
-   var saladOpen = parseFloat(document.getElementById("saladOpen").value)
-   var wrapFront= parseFloat(document.getElementById("wrapFront").value)
-   var retarderBread = parseFloat(document.getElementById("retarderTotal").value)
-   saladTotal = (saladBag*56) + saladOpen;
+   var breadFront = parseFloat(document.getElementById("breadFront").value);
+   var flatFront = parseFloat(document.getElementById("flatFront").value);
+   var crossFront = parseFloat(document.getElementById("crossFront").value);
+   var saladBag = parseFloat(document.getElementById("saladBag").value);
+   var saladOpen = parseFloat(document.getElementById("saladOpen").value);
+   var wrapFront= parseFloat(document.getElementById("wrapFront").value);
+   var retarderBread = parseFloat(document.getElementById("retarderTotal").value);
 
-   freezerWrap = (wrapBox*72) + (wrapOpen*8)
-   freezerBread = (breadBox*70) + breadOpen;
-   freezerFlat = (flatBox*60) + (flatOpen*10);
-   freezerCross = (crossBox * 48) + crossOpen;
+   var saladTotal = (saladBag*56) + saladOpen;
+   var freezerWrap = (wrapBox*72) + (wrapOpen*8);
+   var freezerBread = (breadBox*70) + breadOpen;
+   var freezerFlat = (flatBox*60) + (flatOpen*10);
+   var freezerCross = (crossBox * 48) + crossOpen;
 
-   breadTotal = freezerBread + retarderBread + breadFront;
-   flatTotal = freezerFlat + flatFront;
-   wrapTotal = freezerCross + freezerWrap + wrapFront + crossFront;
-   saveFields();
-   updateTotal();
+   var breadTotal = freezerBread + retarderBread + breadFront;
+   var flatTotal = freezerFlat + flatFront;
+   var wrapTotal = freezerCross + freezerWrap + wrapFront + crossFront;
+   var dataFields = {breadBox, breadOpen, flatBox, flatOpen, crossBox, crossOpen, wrapBox, wrapOpen,
+                     breadFront, flatFront, crossFront, saladBag, saladOpen, wrapFront, retarderBread}
+
+   localStorage.setItem("data", JSON.stringify(dataFields));
+   updateTotal(breadTotal, flatTotal, wrapTotal, saladTotal);
  }
 
-function updateTotal(){
+function updateTotal(bT, fT, wT, sT){
   var breadCount = document.getElementById("breadCount");
   var flatCount = document.getElementById("flatCount");
   var wrapCount = document.getElementById("wrapCount");
   var saladCount = document.getElementById("saladCount");
 
-  breadCount.innerHTML = "Bread Total = " + breadTotal;
-  flatCount.innerHTML = "FlatBread Total = " + flatTotal;
-  wrapCount.innerHTML = "Wrap Total = " + wrapTotal;
-  saladCount.innerHTML = "Salad Bowl Total = " + saladTotal;
+  breadCount.innerHTML = "Bread Total = " + bT;
+  flatCount.innerHTML = "FlatBread Total = " + fT;
+  wrapCount.innerHTML = "Wrap Total = " + wT;
+  saladCount.innerHTML = "Salad Bowl Total = " + sT;
 }
 
-function saveFields(){
-
-}
 function showFreezer(){
   var show = document.getElementById("freezerDrop");
-  console.log(show.style.display);
   if(show.style.display == "none" || show.style.display == ""){
     show.style.display = "inline";
   }
@@ -66,7 +59,6 @@ function showFreezer(){
 
 function showRetarder(){
   var show = document.getElementById("retarderDrop");
-  console.log(show.style.display);
   if(show.style.display == "none" || show.style.display == ""){
     show.style.display = "inline";
   }
@@ -77,7 +69,6 @@ function showRetarder(){
 
 function showWrap(){
   var show = document.getElementById("wrapDrop");
-  console.log(show.style.display);
   if(show.style.display == "none" || show.style.display == ""){
     show.style.display = "inline";
   }
@@ -88,7 +79,6 @@ function showWrap(){
 
 function showFront(){
   var show = document.getElementById("frontDrop");
-  console.log(show.style.display);
   if(show.style.display == "none" || show.style.display == ""){
     show.style.display = "inline";
   }
@@ -100,3 +90,13 @@ function showFront(){
 setInterval(function(){
    countBread();
  }, 1000);
+
+ function populateFields(){
+   console.log("populating...")
+   var data = localStorage.getItem("data");
+   data = JSON.parse(data);
+
+
+   document.getElementById("breadBox").value = data.breadBox;
+   
+ }
