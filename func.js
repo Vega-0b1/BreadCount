@@ -91,7 +91,7 @@ setInterval(function(){
    countBread();
  }, 1000);
 
- function populateFields(){
+function populateFields(){
    console.log("populating...")
    var data = localStorage.getItem("data");
    data = JSON.parse(data);
@@ -116,3 +116,27 @@ setInterval(function(){
    document.getElementById("retarderTotal").value = data.retarderBread;
 
  }
+
+function resetValues(){
+  var confirmation = confirm("Are you sure you want reset all values?");
+  if(confirmation == true){
+    document.getElementById("breadBox").value = 0;
+    document.getElementById("breadOpen").value = 0;
+    document.getElementById("flatBox").value = 0;
+    document.getElementById("flatOpen").value = 0;
+    document.getElementById("crossBox").value = 0;
+    document.getElementById("crossOpen").value = 0;
+    document.getElementById("wrapBox").value = 0;
+    document.getElementById("wrapOpen").value = 0;
+
+    document.getElementById("breadFront").value = 0;
+    document.getElementById("flatFront").value = 0;
+    document.getElementById("wrapFront").value = 0;
+    document.getElementById("crossFront").value = 0;
+
+    document.getElementById("saladBag").value = 0;
+    document.getElementById("saladOpen").value = 0;
+
+    document.getElementById("retarderTotal").value = 0;
+  }
+}

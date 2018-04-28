@@ -5,6 +5,8 @@
   padding: 5%;
   width: 100%;
   margin:auto;
+  background-color: #e6e6e6;
+  color:black;
 }
 
 .total{
@@ -12,7 +14,7 @@
 }
 
 #totalBlock{
-  background-color: teal;
+  background-color: #00cccc;
   border-radius: .9em;
   padding: 2%;
   width: 100%;
@@ -53,4 +55,9 @@
 
 #frontDrop{
   display: none;
+}
+
+#reset{
+  background-color: #ff9999;
+  color:black;
 }
