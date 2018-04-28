@@ -1,24 +1,22 @@
 .menuButton{
   display: block;
   border-radius: .5em;
-  font-size: 1.5em;
-  padding: 2%;
-  width: 64%;
-  margin-left:20%;
+  font-size: 3em;
+  padding: 5%;
+  width: 100%;
+  margin:auto;
 }
 
 .total{
-  font-size: 2em;
+  font-size: 3em;
 }
 
 #totalBlock{
   background-color: teal;
   border-radius: .9em;
   padding: 2%;
-  width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 1%;
+  width: 100%;
+  margin: auto;
 }
 
 .divInputs{
