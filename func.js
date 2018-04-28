@@ -7,15 +7,8 @@
  var freezerFlat = 0;
  var freezerCross = 0;
  var freezerWrap = 0;
-
- var retarderBread = 0;
-
- var breadFront = 0;
- var flatFront = 0;
- var wrapFront = 0;
- var crossFront = 0;
-
- function countFreezer(){
+ 
+ function countBread(){
    var breadBox = parseFloat(document.getElementById("breadBox").value);
    var breadOpen = parseFloat(document.getElementById("breadOpen").value);
    var flatBox = parseFloat(document.getElementById("flatBox").value);
@@ -24,28 +17,28 @@
    var crossOpen = parseFloat(document.getElementById("crossOpen").value);
    var wrapBox = parseFloat(document.getElementById("wrapBox").value);
    var wrapOpen = parseFloat(document.getElementById("wrapOpen").value);
-   breadFront = parseFloat(document.getElementById("breadFront").value)
-   flatFront = parseFloat(document.getElementById("flatFront").value)
-   crossFront = parseFloat(document.getElementById("crossFront").value)
+   var breadFront = parseFloat(document.getElementById("breadFront").value)
+   var flatFront = parseFloat(document.getElementById("flatFront").value)
+   var crossFront = parseFloat(document.getElementById("crossFront").value)
    var saladBag = parseFloat(document.getElementById("saladBag").value)
    var saladOpen = parseFloat(document.getElementById("saladOpen").value)
-   wrapFront= parseFloat(document.getElementById("wrapFront").value)
-
-   retarderBread = parseFloat(document.getElementById("retarderTotal").value)
+   var wrapFront= parseFloat(document.getElementById("wrapFront").value)
+   var retarderBread = parseFloat(document.getElementById("retarderTotal").value)
    saladTotal = (saladBag*56) + saladOpen;
 
    freezerWrap = (wrapBox*72) + (wrapOpen*8)
    freezerBread = (breadBox*70) + breadOpen;
    freezerFlat = (flatBox*60) + (flatOpen*10);
    freezerCross = (crossBox * 48) + crossOpen;
+
+   breadTotal = freezerBread + retarderBread + breadFront;
+   flatTotal = freezerFlat + flatFront;
+   wrapTotal = freezerCross + freezerWrap + wrapFront + crossFront;
+   saveFields();
+   updateTotal();
  }
 
-function calc(){
-  countFreezer();
-  breadTotal = freezerBread + retarderBread + breadFront;
-  flatTotal = freezerFlat + flatFront;
-  wrapTotal = freezerCross + freezerWrap + wrapFront + crossFront;
-
+function updateTotal(){
   var breadCount = document.getElementById("breadCount");
   var flatCount = document.getElementById("flatCount");
   var wrapCount = document.getElementById("wrapCount");
@@ -57,6 +50,9 @@ function calc(){
   saladCount.innerHTML = "Salad Bowl Total = " + saladTotal;
 }
 
+function saveFields(){
+
+}
 function showFreezer(){
   var show = document.getElementById("freezerDrop");
   console.log(show.style.display);
@@ -102,5 +98,5 @@ function showFront(){
 }
 
 setInterval(function(){
-   calc();
+   countBread();
  }, 1000);
