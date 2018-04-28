@@ -1,0 +1,52 @@
+.menuButton{
+  display: block;
+  border-radius: .5em;
+  font-size: 1.5em;
+  padding: 2%;
+  width: 64%;
+  margin-left:20%;
+}
+
+.total{
+  font-size: 2em;
+}
+
+#totalBlock{
+  background-color: teal;
+  border-radius: .9em;
+  padding: 2%;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 1%;
+}
+
+.divInputs{
+  display: flex;
+
+  padding: 1%;
+  margin-top:2%;
+}
+
+.divInputs input{
+  margin-left: 50%;
+  margin-right: 0%;
+  font-size: 3em;
+  float:right;
+}
+
+#freezerDrop{
+  display: none;
+}
+
+#retarderDrop{
+  display: none;
+}
+
+#wrapDrop{
+  display: none;
+}
+
+#frontDrop{
+  display: none;
+}
