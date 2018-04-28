@@ -96,7 +96,23 @@ setInterval(function(){
    var data = localStorage.getItem("data");
    data = JSON.parse(data);
 
-
    document.getElementById("breadBox").value = data.breadBox;
-   
+   document.getElementById("breadOpen").value = data.breadOpen;
+   document.getElementById("flatBox").value = data.flatBox;
+   document.getElementById("flatOpen").value = data.flatOpen;
+   document.getElementById("crossBox").value = data.crossBox;
+   document.getElementById("crossOpen").value = data.crossOpen;
+   document.getElementById("wrapBox").value = data.wrapBox;
+   document.getElementById("wrapOpen").value = data.wrapOpen;
+
+   document.getElementById("breadFront").value = data.breadFront;
+   document.getElementById("flatFront").value = data.flatFront;
+   document.getElementById("wrapFront").value = data.wrapFront;
+   document.getElementById("crossFront").value = data.crossFront;
+
+   document.getElementById("saladBag").value = data.saladBag;
+   document.getElementById("saladOpen").value = data.saladOpen;
+
+   document.getElementById("retarderTotal").value = data.retarderBread;
+
  }
