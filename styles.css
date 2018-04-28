@@ -21,16 +21,22 @@
 
 .divInputs{
   display: flex;
-
-  padding: 1%;
-  margin-top:2%;
+  margin-top: 1%;
 }
 
 .divInputs input{
-  margin-left: 50%;
+  width: 20%;
+  margin-left: 0%;
   margin-right: 0%;
   font-size: 3em;
   float:right;
+}
+
+.divInputs h2{
+  width: 80%;
+  margin-left: 0%;
+  margin-right: 0%;
+  font-size: 3em;
 }
 
 #freezerDrop{
