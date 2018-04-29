@@ -31,7 +31,7 @@
         <input id="crossBox" type="number" value="0"/>
       </div>
       <div class="divInputs">
-        <h2>(Open Box)Crossiant Total:</h2>
+        <h2>(Open Box)Crossiant Trays:</h2>
         <input id="crossOpen" type="number" value="0"/>
       </div>
     </div>
@@ -39,7 +39,7 @@
     <input class="menuButton" type="button" onclick="showRetarder()" value="Count Retarder"/>
     <div id="retarderDrop">
       <div class="divInputs">
-        <h2>Retarder Bread Total:</h2>
+        <h2>Retarder Bread (Number Of Trays):</h2>
         <input id="retarderTotal" type="number" value="0"/>
       </div>
     </div>
@@ -57,24 +57,40 @@
       </div>
     </div>
 
-    <input class="menuButton" type="button" onclick="showFront()" value="Count Front"/>
-    <div id="frontDrop">
+    <input class="menuButton" type="button" onclick="showCabinet1()" value="Count Bread Cabinet 1"/>
+    <div id="cabinet1Drop">
       <div class="divInputs">
         <h2>Bread Total:</h2>
-        <input id="breadFront" type="number" value="0"/>
+        <input id="breadFront1" type="number" value="0"/>
       </div>
       <div class="divInputs">
         <h2>Flatbread Total:</h2>
-        <input id = "flatFront" type="number" value="0"/>
+        <input id = "flatFront1" type="number" value="0"/>
       </div>
       <div class="divInputs">
         <h2>Wrap Total:</h2>
-        <input id="wrapFront" type="number" value="0"/>
+        <input id="wrapFront1" type="number" value="0"/>
       </div>
       <div class="divInputs">
         <h2>Crossiant Total:</h2>
         <input id="crossFront" type="number" value="0"/>
       </div>
+    </div>
+    <input class="menuButton" type="button" onclick="showCabinet2()" value="Count Bread Cabinet 2"/>
+    <div id="cabinet2Drop">
+      <div class="divInputs">
+        <h2>Bread Total:</h2>
+        <input id="breadFront2" type="number" value="0"/>
+      </div>
+      <div class="divInputs">
+        <h2>Flatbread Total:</h2>
+        <input id = "flatFront2" type="number" value="0"/>
+      </div>
+      <div class="divInputs">
+        <h2>Wrap Total:</h2>
+        <input id="wrapFront2" type="number" value="0"/>
+      </div>
+
       <div class="divInputs">
         <h2>Unopened Salad Bowl Bags:</h2>
         <input id="saladBag" type="number" value="0"/>
@@ -88,10 +104,10 @@
     <div id="totalBlock">
       <h2 class ="total" id="breadCount">Bread Total =</h2>
       <h2 class ="total" id="flatCount">FlatBread Total =</h2>
-      <h2 class ="total" id="wrapCount">Wrap Total =</h2>
       <h2 class ="total" id="saladCount">Salad Bowl Total =</h2>
+      <h2 class ="total" id="wrapCount">Wrap Total =</h2>
     </div>
     <input id="reset" class="menuButton" type="button" onclick="resetValues()" value="Reset"/>
-    <footer><h3>version 0.1.1</h3></footer>
+    <footer><h3>version 0.1.2</h3></footer>
   </body>
 </html>

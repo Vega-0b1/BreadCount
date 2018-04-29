@@ -4,7 +4,8 @@
   font-size: 3em;
   padding: 5%;
   width: 100%;
-  margin:auto;
+  margin-left: 0;
+  margin-right: 0;
   background-color: #e6e6e6;
   color:black;
 }
@@ -17,7 +18,7 @@
   background-color: #00cccc;
   border-radius: .9em;
   padding: 2%;
-  width: 100%;
+  width: 96%;
   margin: auto;
 }
 
@@ -53,7 +54,11 @@
   display: none;
 }
 
-#frontDrop{
+#cabinet1Drop{
+  display: none;
+}
+
+#cabinet2Drop{
   display: none;
 }
 

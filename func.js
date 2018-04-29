@@ -11,25 +11,28 @@ $( document ).ready(function() {
    var crossOpen = parseFloat(document.getElementById("crossOpen").value);
    var wrapBox = parseFloat(document.getElementById("wrapBox").value);
    var wrapOpen = parseFloat(document.getElementById("wrapOpen").value);
-   var breadFront = parseFloat(document.getElementById("breadFront").value);
-   var flatFront = parseFloat(document.getElementById("flatFront").value);
+   var breadFront1 = parseFloat(document.getElementById("breadFront1").value);
+   var breadFront2 = parseFloat(document.getElementById("breadFront2").value);
+   var flatFront1 = parseFloat(document.getElementById("flatFront1").value);
+   var flatFront2 = parseFloat(document.getElementById("flatFront2").value);
    var crossFront = parseFloat(document.getElementById("crossFront").value);
    var saladBag = parseFloat(document.getElementById("saladBag").value);
    var saladOpen = parseFloat(document.getElementById("saladOpen").value);
-   var wrapFront= parseFloat(document.getElementById("wrapFront").value);
+   var wrapFront1= parseFloat(document.getElementById("wrapFront1").value);
+   var wrapFront2= parseFloat(document.getElementById("wrapFront2").value);
    var retarderBread = parseFloat(document.getElementById("retarderTotal").value);
 
    var saladTotal = (saladBag*56) + saladOpen;
    var freezerWrap = (wrapBox*72) + (wrapOpen*8);
    var freezerBread = (breadBox*70) + breadOpen;
    var freezerFlat = (flatBox*60) + (flatOpen*10);
-   var freezerCross = (crossBox * 48) + crossOpen;
+   var freezerCross = (crossBox * 48) + (crossOpen * 12);
 
-   var breadTotal = freezerBread + retarderBread + breadFront;
-   var flatTotal = freezerFlat + flatFront;
-   var wrapTotal = freezerCross + freezerWrap + wrapFront + crossFront;
+   var breadTotal = freezerBread + (retarderBread * 10) + breadFront1 + breadFront2;
+   var flatTotal = freezerFlat + flatFront1 + flatFront2;
+   var wrapTotal = freezerCross + freezerWrap + wrapFront1 + wrapFront2 + crossFront;
    var dataFields = {breadBox, breadOpen, flatBox, flatOpen, crossBox, crossOpen, wrapBox, wrapOpen,
-                     breadFront, flatFront, crossFront, saladBag, saladOpen, wrapFront, retarderBread}
+                     breadFront1, breadFront2, flatFront1, flatFront2, crossFront, saladBag, saladOpen, wrapFront1, wrapFront2, retarderBread}
 
    localStorage.setItem("data", JSON.stringify(dataFields));
    updateTotal(breadTotal, flatTotal, wrapTotal, saladTotal);
@@ -77,8 +80,18 @@ function showWrap(){
   }
 }
 
-function showFront(){
-  var show = document.getElementById("frontDrop");
+function showCabinet1(){
+  var show = document.getElementById("cabinet1Drop");
+  if(show.style.display == "none" || show.style.display == ""){
+    show.style.display = "inline";
+  }
+  else{
+    show.style.display = "none";
+  }
+}
+
+function showCabinet2(){
+  var show = document.getElementById("cabinet2Drop");
   if(show.style.display == "none" || show.style.display == ""){
     show.style.display = "inline";
   }
@@ -92,7 +105,6 @@ setInterval(function(){
  }, 1000);
 
 function populateFields(){
-   console.log("populating...")
    var data = localStorage.getItem("data");
    data = JSON.parse(data);
 
@@ -105,9 +117,12 @@ function populateFields(){
    document.getElementById("wrapBox").value = data.wrapBox;
    document.getElementById("wrapOpen").value = data.wrapOpen;
 
-   document.getElementById("breadFront").value = data.breadFront;
-   document.getElementById("flatFront").value = data.flatFront;
-   document.getElementById("wrapFront").value = data.wrapFront;
+   document.getElementById("breadFront1").value = data.breadFront1;
+   document.getElementById("breadFront2").value = data.breadFront2;
+   document.getElementById("flatFront1").value = data.flatFront1;
+   document.getElementById("flatFront2").value = data.flatFront2;
+   document.getElementById("wrapFront1").value = data.wrapFront1;
+   document.getElementById("wrapFront2").value = data.wrapFront2;
    document.getElementById("crossFront").value = data.crossFront;
 
    document.getElementById("saladBag").value = data.saladBag;
@@ -129,9 +144,12 @@ function resetValues(){
     document.getElementById("wrapBox").value = 0;
     document.getElementById("wrapOpen").value = 0;
 
-    document.getElementById("breadFront").value = 0;
-    document.getElementById("flatFront").value = 0;
-    document.getElementById("wrapFront").value = 0;
+    document.getElementById("breadFront1").value = 0;
+    document.getElementById("flatFront1").value = 0;
+    document.getElementById("wrapFront1").value = 0;
+    document.getElementById("breadFront2").value = 0;
+    document.getElementById("flatFront2").value = 0;
+    document.getElementById("wrapFront2").value = 0;
     document.getElementById("crossFront").value = 0;
 
     document.getElementById("saladBag").value = 0;
