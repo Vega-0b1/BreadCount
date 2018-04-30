@@ -2,7 +2,7 @@ $( document ).ready(function() {
     if(localStorage.getItem("data") != null) populateFields();
 });
 
- function countBread(){
+function countBread(){
    var breadBox = parseFloat(document.getElementById("breadBox").value);
    var breadOpen = parseFloat(document.getElementById("breadOpen").value);
    var flatBox = parseFloat(document.getElementById("flatBox").value);
@@ -50,8 +50,8 @@ function updateTotal(bT, fT, wT, sT){
   saladCount.innerHTML = "Salad Bowl Total = " + sT;
 }
 
-function showFreezer(){
-  var show = document.getElementById("freezerDrop");
+function dropMenu(clickedId){
+  var show = document.getElementById(clickedId + "Drop");
   if(show.style.display == "none" || show.style.display == ""){
     show.style.display = "inline";
   }
@@ -59,50 +59,6 @@ function showFreezer(){
     show.style.display = "none";
   }
 }
-
-function showRetarder(){
-  var show = document.getElementById("retarderDrop");
-  if(show.style.display == "none" || show.style.display == ""){
-    show.style.display = "inline";
-  }
-  else{
-    show.style.display = "none";
-  }
-}
-
-function showWrap(){
-  var show = document.getElementById("wrapDrop");
-  if(show.style.display == "none" || show.style.display == ""){
-    show.style.display = "inline";
-  }
-  else{
-    show.style.display = "none";
-  }
-}
-
-function showCabinet1(){
-  var show = document.getElementById("cabinet1Drop");
-  if(show.style.display == "none" || show.style.display == ""){
-    show.style.display = "inline";
-  }
-  else{
-    show.style.display = "none";
-  }
-}
-
-function showCabinet2(){
-  var show = document.getElementById("cabinet2Drop");
-  if(show.style.display == "none" || show.style.display == ""){
-    show.style.display = "inline";
-  }
-  else{
-    show.style.display = "none";
-  }
-}
-
-setInterval(function(){
-   countBread();
- }, 1000);
 
 function populateFields(){
    var data = localStorage.getItem("data");
@@ -135,26 +91,14 @@ function populateFields(){
 function resetValues(){
   var confirmation = confirm("Are you sure you want reset all values?");
   if(confirmation == true){
-    document.getElementById("breadBox").value = 0;
-    document.getElementById("breadOpen").value = 0;
-    document.getElementById("flatBox").value = 0;
-    document.getElementById("flatOpen").value = 0;
-    document.getElementById("crossBox").value = 0;
-    document.getElementById("crossOpen").value = 0;
-    document.getElementById("wrapBox").value = 0;
-    document.getElementById("wrapOpen").value = 0;
+    var inputs = document.getElementsByClassName("inputs");
 
-    document.getElementById("breadFront1").value = 0;
-    document.getElementById("flatFront1").value = 0;
-    document.getElementById("wrapFront1").value = 0;
-    document.getElementById("breadFront2").value = 0;
-    document.getElementById("flatFront2").value = 0;
-    document.getElementById("wrapFront2").value = 0;
-    document.getElementById("crossFront").value = 0;
-
-    document.getElementById("saladBag").value = 0;
-    document.getElementById("saladOpen").value = 0;
-
-    document.getElementById("retarderTotal").value = 0;
+    for(var i = 0; i < inputs.length; i++){
+      inputs[i].value = 0;
+    }
   }
 }
+
+setInterval(function(){
+   countBread();
+ }, 1000);
