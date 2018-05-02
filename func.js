@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+  addEvents();
     if(localStorage.getItem("data") != null) populateFields();
 });
 
@@ -63,7 +64,7 @@ function dropMenu(clickedId){
 function populateFields(){
    var data = localStorage.getItem("data");
    data = JSON.parse(data);
-
+   
    document.getElementById("breadBox").value = data.breadBox;
    document.getElementById("breadOpen").value = data.breadOpen;
    document.getElementById("flatBox").value = data.flatBox;
@@ -99,6 +100,12 @@ function resetValues(){
   }
 }
 
+function addEvents(){
+  var btn = document.getElementsByClassName("menuButton");
+  for(var i = 0; i < btn.length; i++){
+    btn[i].addEventListener("click", function(){ dropMenu(this.id); });
+  }
+}
 setInterval(function(){
    countBread();
  }, 1000);

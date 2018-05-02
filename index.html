@@ -8,106 +8,107 @@
     <script src="func.js"></script>
   </head>
   <body>
-    <input id="freezer" class="menuButton" type="button" onclick="dropMenu(this.id)" value="Count Freezer"/>
-    <div id="freezerDrop">
-      <div class="divInputs">
-        <h2>Number Of Unopened Bread Boxes:</h2>
-        <input id="breadBox" class="inputs" type="number" value="0"/>
-      </div>
-      <div class="divInputs">
-        <h2>(Open Box) Bread Total:</h2>
-        <input id="breadOpen" class="inputs" type="number" value="0"/>
-      </div>
-      <div class="divInputs">
-        <h2>Number of Unopened FlatBread Boxes:</h2>
-        <input id="flatBox" class="inputs" type="number" value="0"/>
-      </div>
-      <div class="divInputs">
-        <h2>FlatBread Bags:</h2>
-        <input id="flatOpen" class="inputs" type="number" value="0"/>
-      </div>
-      <div class="divInputs">
-        <h2>Number of Unopened Croissant Boxes:</h2>
-        <input id="crossBox" class="inputs" type="number" value="0"/>
-      </div>
-      <div class="divInputs">
-        <h2>(Open Box)Croissant Trays:</h2>
-        <input id="crossOpen" class="inputs" type="number" value="0"/>
-      </div>
-    </div>
-
-    <input id="retarder" class="menuButton" type="button" onclick="dropMenu(this.id)" value="Count Retarder"/>
-    <div id="retarderDrop">
-      <div class="divInputs">
-        <h2>Retarder Bread (Number Of Trays):</h2>
-        <input id="retarderTotal" class="inputs" type="number" value="0"/>
-      </div>
-    </div>
-
-
-    <input id="wrap" class="menuButton" type="button" onclick="dropMenu(this.id)" value="Count Wraps"/>
-    <div id="wrapDrop">
-      <div class="divInputs">
-        <h2>Number Of Unopened Wrap Boxes:</h2>
-        <input id="wrapBox" class="inputs" type="number" value="0"/>
-      </div>
-      <div class="divInputs">
-        <h2>(Open Box) Wrap Bags Total:</h2>
-        <input id="wrapOpen" class="inputs" type="number" value="0"/>
-      </div>
-    </div>
-
-    <input id="cabinet1" class="menuButton" type="button" onclick="dropMenu(this.id)" value="Count Bread Cabinet 1"/>
-    <div id="cabinet1Drop">
-      <div class="divInputs">
-        <h2>Bread Total:</h2>
-        <input id="breadFront1" class="inputs" type="number" value="0"/>
-      </div>
-      <div class="divInputs">
-        <h2>Flatbread Total:</h2>
-        <input id = "flatFront1" class="inputs" type="number" value="0"/>
-      </div>
-      <div class="divInputs">
-        <h2>Wrap Total:</h2>
-        <input id="wrapFront1" class="inputs" type="number" value="0"/>
-      </div>
-      <div class="divInputs">
-        <h2>Croissant Total:</h2>
-        <input id="crossFront" class="inputs" type="number" value="0"/>
-      </div>
-    </div>
-    <input id="cabinet2" class="menuButton" type="button" onclick="dropMenu(this.id)" value="Count Bread Cabinet 2"/>
-    <div id="cabinet2Drop">
-      <div class="divInputs">
-        <h2>Bread Total:</h2>
-        <input id="breadFront2" class="inputs" type="number" value="0"/>
-      </div>
-      <div class="divInputs">
-        <h2>Flatbread Total:</h2>
-        <input id = "flatFront2" class="inputs" type="number" value="0"/>
-      </div>
-      <div class="divInputs">
-        <h2>Wrap Total:</h2>
-        <input id="wrapFront2" class="inputs" type="number" value="0"/>
+    <input id="freezer" class="menuButton" type="button" value="Count Freezer"/>
+      <div id="freezerDrop">
+        <div class="divInputs">
+          <h2>Number Of Unopened Bread Boxes:</h2>
+          <input id="breadBox" class="inputs" type="number" value="0"/>
+        </div>
+        <div class="divInputs">
+          <h2>(Open Box) Bread Total:</h2>
+          <input id="breadOpen" class="inputs" type="number" value="0"/>
+        </div>
+        <div class="divInputs">
+          <h2>Number of Unopened FlatBread Boxes:</h2>
+          <input id="flatBox" class="inputs" type="number" value="0"/>
+        </div>
+        <div class="divInputs">
+          <h2>FlatBread Bags:</h2>
+          <input id="flatOpen" class="inputs" type="number" value="0"/>
+        </div>
+        <div class="divInputs">
+          <h2>Number of Unopened Croissant Boxes:</h2>
+          <input id="crossBox" class="inputs" type="number" value="0"/>
+        </div>
+        <div class="divInputs">
+          <h2>(Open Box)Croissant Trays:</h2>
+          <input id="crossOpen" class="inputs" type="number" value="0"/>
+        </div>
       </div>
 
-      <div class="divInputs">
-        <h2>Unopened Salad Bowl Bags:</h2>
-        <input id="saladBag" class="inputs" type="number" value="0"/>
+    <input id="retarder" class="menuButton" type="button" value="Count Retarder"/>
+      <div id="retarderDrop">
+        <div class="divInputs">
+          <h2>Retarder Bread (Number Of Trays):</h2>
+          <input id="retarderTotal" class="inputs" type="number" value="0"/>
+        </div>
       </div>
-      <div class="divInputs">
-        <h2>Opened Salad Bowl Total:</h2>
-        <input id="saladOpen" class="inputs" type="number" value="0"/>
-      </div>
-    </div>
 
-    <div id="totalBlock">
-      <h2 class ="total" id="breadCount">Bread Total =</h2>
-      <h2 class ="total" id="flatCount">FlatBread Total =</h2>
-      <h2 class ="total" id="saladCount">Salad Bowl Total =</h2>
-      <h2 class ="total" id="wrapCount">Wrap Total =</h2>
-    </div>
-    <input id="reset" class="menuButton" type="button" onclick="resetValues()" value="Reset"/>
-    <footer><h3>version 0.1.3</h3></footer>
+    <input id="wrap" class="menuButton" type="button" value="Count Wraps"/>
+      <div id="wrapDrop">
+        <div class="divInputs">
+          <h2>Number Of Unopened Wrap Boxes:</h2>
+          <input id="wrapBox" class="inputs" type="number" value="0"/>
+        </div>
+        <div class="divInputs">
+          <h2>(Open Box) Wrap Bags Total:</h2>
+          <input id="wrapOpen" class="inputs" type="number" value="0"/>
+        </div>
+      </div>
+
+    <input id="cabinet1" class="menuButton" type="button" value="Count Bread Cabinet 1"/>
+      <div id="cabinet1Drop">
+        <div class="divInputs">
+          <h2>Bread Total:</h2>
+          <input id="breadFront1" class="inputs" type="number" value="0"/>
+        </div>
+        <div class="divInputs">
+          <h2>Flatbread Total:</h2>
+          <input id = "flatFront1" class="inputs" type="number" value="0"/>
+        </div>
+        <div class="divInputs">
+          <h2>Wrap Total:</h2>
+          <input id="wrapFront1" class="inputs" type="number" value="0"/>
+        </div>
+        <div class="divInputs">
+          <h2>Croissant Total:</h2>
+          <input id="crossFront" class="inputs" type="number" value="0"/>
+        </div>
+      </div>
+
+    <input id="cabinet2" class="menuButton" type="button" value="Count Bread Cabinet 2"/>
+      <div id="cabinet2Drop">
+        <div class="divInputs">
+          <h2>Bread Total:</h2>
+          <input id="breadFront2" class="inputs" type="number" value="0"/>
+        </div>
+        <div class="divInputs">
+          <h2>Flatbread Total:</h2>
+          <input id = "flatFront2" class="inputs" type="number" value="0"/>
+        </div>
+        <div class="divInputs">
+          <h2>Wrap Total:</h2>
+          <input id="wrapFront2" class="inputs" type="number" value="0"/>
+        </div>
+
+        <div class="divInputs">
+          <h2>Unopened Salad Bowl Bags:</h2>
+          <input id="saladBag" class="inputs" type="number" value="0"/>
+        </div>
+        <div class="divInputs">
+          <h2>Opened Salad Bowl Total:</h2>
+          <input id="saladOpen" class="inputs" type="number" value="0"/>
+        </div>
+      </div>
+
+      <div id="totalBlock">
+        <h2 class ="total" id="breadCount">Bread Total =</h2>
+        <h2 class ="total" id="flatCount">FlatBread Total =</h2>
+        <h2 class ="total" id="saladCount">Salad Bowl Total =</h2>
+        <h2 class ="total" id="wrapCount">Wrap Total =</h2>
+      </div>
+    <input id="reset" type="button" onclick="resetValues()" value="Reset"/>
+
+    <footer><h3>version 0.1.4</h3></footer>
   </body>
 </html>
