@@ -40,31 +40,16 @@ function countBread(){
  }
 
 function updateTotal(bT, fT, wT, sT){
-  var breadCount = document.getElementById("breadCount");
-  var flatCount = document.getElementById("flatCount");
-  var wrapCount = document.getElementById("wrapCount");
-  var saladCount = document.getElementById("saladCount");
-
-  breadCount.innerHTML = "Bread Total = " + bT;
-  flatCount.innerHTML = "FlatBread Total = " + fT;
-  wrapCount.innerHTML = "Wrap Total = " + wT;
-  saladCount.innerHTML = "Salad Bowl Total = " + sT;
-}
-
-function dropMenu(clickedId){
-  var show = document.getElementById(clickedId + "Drop");
-  if(show.style.display == "none" || show.style.display == ""){
-    show.style.display = "inline";
-  }
-  else{
-    show.style.display = "none";
-  }
+  $("#breadCount").html("Bread Total = " + bT);
+  $("#flatCount").html("Flatbread Total = " + fT);
+  $("#wrapCount").html("Wrap Total = " + wT);
+  $("#saladCount").html("Salad Bowl Total = " + sT);
 }
 
 function populateFields(){
    var data = localStorage.getItem("data");
    data = JSON.parse(data);
-   
+
    document.getElementById("breadBox").value = data.breadBox;
    document.getElementById("breadOpen").value = data.breadOpen;
    document.getElementById("flatBox").value = data.flatBox;
@@ -89,6 +74,23 @@ function populateFields(){
 
  }
 
+function addEvents(){
+  var btn = document.getElementsByClassName("menuButton");
+  for(var i = 0; i < btn.length; i++){
+    btn[i].addEventListener("click", function(){ dropMenu(this.id); });
+  }
+}
+
+function dropMenu(clickedId){
+  var show = document.getElementById(clickedId + "Drop");
+  if(show.style.display == "none" || show.style.display == ""){
+    show.style.display = "inline";
+  }
+  else{
+    show.style.display = "none";
+  }
+}
+
 function resetValues(){
   var confirmation = confirm("Are you sure you want reset all values?");
   if(confirmation == true){
@@ -100,12 +102,6 @@ function resetValues(){
   }
 }
 
-function addEvents(){
-  var btn = document.getElementsByClassName("menuButton");
-  for(var i = 0; i < btn.length; i++){
-    btn[i].addEventListener("click", function(){ dropMenu(this.id); });
-  }
-}
 setInterval(function(){
    countBread();
  }, 1000);
