@@ -6,8 +6,16 @@
   width: 100%;
   margin-left: 0;
   margin-right: 0;
-  background-color: #e6e6e6;
+
   color:black;
+}
+
+.menuButton:nth-of-type(odd){
+  background-color: #ffffcc;
+}
+
+.menuButton:nth-of-type(even){
+  background-color:#ffffe6;
 }
 
 .total{
