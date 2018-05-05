@@ -29,7 +29,7 @@ function countBread(){
    var freezerFlat = (flatBox*60) + (flatOpen*10);
    var freezerCross = (crossBox * 48) + (crossOpen * 12);
 
-   var breadTotal = freezerBread + (retarderBread * 10) + breadFront1 + breadFront2;
+   var breadTotal = freezerBread + retarderBread + breadFront1 + breadFront2;
    var flatTotal = freezerFlat + flatFront1 + flatFront2;
    var wrapTotal = freezerCross + freezerWrap + wrapFront1 + wrapFront2 + crossFront;
 
