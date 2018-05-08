@@ -5,23 +5,58 @@ $( document ).ready(function() {
 
 function countBread(){
    var breadBox = parseFloat(document.getElementById("breadBox").value);
+   if(isNaN(breadBox))breadBox = 0;
+
    var breadOpen = parseFloat(document.getElementById("breadOpen").value);
+   if(isNaN(breadOpen))breadOpen = 0;
+
    var flatBox = parseFloat(document.getElementById("flatBox").value);
+   if(isNaN(flatBox))flatBox = 0;
+
    var flatOpen = parseFloat(document.getElementById("flatOpen").value);
+   if(isNaN(flatOpen))flatOpen = 0;
+
    var crossBox = parseFloat(document.getElementById("crossBox").value);
+   if(isNaN(crossBox))crossBox = 0;
+
    var crossOpen = parseFloat(document.getElementById("crossOpen").value);
+   if(isNaN(crossOpen))crossOpen = 0;
+
    var wrapBox = parseFloat(document.getElementById("wrapBox").value);
+   if(isNaN(wrapBox))wrapBox = 0;
+
    var wrapOpen = parseFloat(document.getElementById("wrapOpen").value);
+   if(isNaN(wrapOpen))wrapOpen = 0;
+
    var breadFront1 = parseFloat(document.getElementById("breadFront1").value);
+   if(isNaN(breadFront1))breadFront1 = 0;
+
    var breadFront2 = parseFloat(document.getElementById("breadFront2").value);
+   if(isNaN(breadFront2))breadFront2 = 0;
+
    var flatFront1 = parseFloat(document.getElementById("flatFront1").value);
+   if(isNaN(flatFront1))flatFront1 = 0;
+
    var flatFront2 = parseFloat(document.getElementById("flatFront2").value);
+   if(isNaN(flatFront2))flatFront2 = 0;
+
    var crossFront = parseFloat(document.getElementById("crossFront").value);
+   if(isNaN(crossFront))crossFront = 0;
+
    var saladBag = parseFloat(document.getElementById("saladBag").value);
+   if(isNaN(saladBag))saladBag = 0;
+
    var saladOpen = parseFloat(document.getElementById("saladOpen").value);
+   if(isNaN(saladOpen))saladOpen = 0;
+
    var wrapFront1= parseFloat(document.getElementById("wrapFront1").value);
+   if(isNaN(wrapFront1))wrapFront1 = 0;
+
    var wrapFront2= parseFloat(document.getElementById("wrapFront2").value);
+   if(isNaN(wrapFront2))wrapFront2 = 0;
+
    var retarderBread = parseFloat(document.getElementById("retarderBread").value);
+   if(isNaN(retarderBread))retarderBread = 0;
 
    var saladTotal = (saladBag*56) + saladOpen;
    var freezerWrap = (wrapBox*72) + (wrapOpen*8);
