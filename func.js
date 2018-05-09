@@ -98,7 +98,7 @@ function addEvents(){
   for(var i = 0; i < btn.length; i++){
     var id = btn[i].id;
     $("#" + id).click(function(){
-        $("#" + this.id + "Drop").toggle(500, "swing");
+        $("#" + this.id + "Drop").toggle(300);
     });
   }
 }
