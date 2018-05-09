@@ -93,9 +93,13 @@ function populateFields(){
  }
 
 function addEvents(){
-  var btn = document.getElementsByClassName("menuButton");
+  var btn = $(".menuButton");
+
   for(var i = 0; i < btn.length; i++){
-    btn[i].addEventListener("click", function(){ dropMenu(this.id); });
+    var id = btn[i].id;
+    $("#" + id).click(function(){
+        $("#" + this.id + "Drop").toggle(500, "swing");
+    });
   }
 }
 

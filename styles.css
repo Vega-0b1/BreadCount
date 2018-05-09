@@ -33,14 +33,17 @@
 .divInputs{
   display: flex;
   margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .divInputs input{
   width: 20%;
   margin-left: 0%;
   margin-right: 0%;
+
   font-size: 3em;
   float:right;
+
 }
 
 .divInputs h2{
@@ -50,23 +53,7 @@
   font-size: 3em;
 }
 
-#freezerDrop{
-  display: none;
-}
-
-#retarderDrop{
-  display: none;
-}
-
-#wrapDrop{
-  display: none;
-}
-
-#cabinet1Drop{
-  display: none;
-}
-
-#cabinet2Drop{
+#freezerDrop, #retarderDrop, #wrapDrop, #cabinet1Drop, #cabinet2Drop{
   display: none;
 }
 
