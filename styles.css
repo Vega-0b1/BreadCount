@@ -1,24 +1,17 @@
 .menuButton, #reset{
+  font-size: 1.5em;
   padding: 3%;
-  width: 100%;
   margin-left: 0;
   margin-right: 0;
   color:black;
 }
 
-.menuButton:nth-of-type(odd){
-  background-color: #ffcece;
-}
-
-.menuButton:nth-of-type(even){
-  background-color:#ffefef;
-}
-
 #totalBlock{
-  background-color: #00cccc;
+  font-size: 1.5em;
   padding: 3%;
   width: 100%;
   margin: auto;
+  border-style: solid;
 }
 
 .divInputs{
@@ -35,7 +28,7 @@
 
 }
 
-.divInputs h2,h4{
+.divInputs h2{
   width: 80%;
   margin-left: 0%;
   margin-right: 0%;
@@ -45,13 +38,9 @@
   display: none;
 }
 
-#reset{
-  background-color: #ff9999;
-  color:black;
-}
-
 footer{margin-top:1%;}
 
 h2{
-  font-size: 1.2em!important;
+  font-size: 1em!important;
+  padding-top:2%!important;
 }
