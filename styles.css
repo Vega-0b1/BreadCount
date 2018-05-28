@@ -1,8 +1,6 @@
 .menuButton, #reset{
-  display: block;
-  border-radius: .5em;
-  font-size: 3em;
-  padding: 5%;
+  font-size: 2.5em;
+  padding: 3%;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -19,14 +17,13 @@
 }
 
 .total{
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 #totalBlock{
   background-color: #00cccc;
-  border-radius: .9em;
-  padding: 2%;
-  width: 96%;
+  padding: 3%;
+  width: 100%;
   margin: auto;
 }
 
@@ -41,7 +38,7 @@
   margin-left: 0%;
   margin-right: 0%;
 
-  font-size: 3em;
+  font-size: 2.5em;
   float:right;
 
 }
@@ -50,7 +47,7 @@
   width: 80%;
   margin-left: 0%;
   margin-right: 0%;
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 #freezerDrop, #retarderDrop, #wrapDrop, #cabinet1Drop, #cabinet2Drop{
@@ -62,6 +59,6 @@
   color:black;
 }
 
-html{
-  background-color: #e8f4ff;
+footer{
+  margin-top:1%;
 }
