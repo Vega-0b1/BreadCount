@@ -35,7 +35,7 @@
 
 }
 
-.divInputs h2{
+.divInputs h2,h4{
   width: 80%;
   margin-left: 0%;
   margin-right: 0%;
@@ -50,6 +50,8 @@
   color:black;
 }
 
-footer{
-  margin-top:1%;
+footer{margin-top:1%;}
+
+h2{
+  font-size: 1.2em!important;
 }
