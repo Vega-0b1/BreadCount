@@ -1,10 +1,8 @@
 .menuButton, #reset{
-  font-size: 2em;
   padding: 3%;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
-
   color:black;
 }
 
@@ -14,10 +12,6 @@
 
 .menuButton:nth-of-type(even){
   background-color:#ffefef;
-}
-
-.total{
-  font-size: 2em;
 }
 
 #totalBlock{
@@ -37,8 +31,6 @@
   width: 20%;
   margin-left: 0%;
   margin-right: 0%;
-
-  font-size: 2em;
   float:right;
 
 }
@@ -47,7 +39,6 @@
   width: 80%;
   margin-left: 0%;
   margin-right: 0%;
-  font-size: 2em;
 }
 
 #freezerDrop, #retarderDrop, #wrapDrop, #cabinet1Drop, #cabinet2Drop{
