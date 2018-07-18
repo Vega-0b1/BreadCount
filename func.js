@@ -60,7 +60,7 @@ function countBread(){
 
    var saladTotal = (saladBag*56) + saladOpen;
    var freezerWrap = (wrapBox*72) + (wrapOpen*8);
-   var freezerBread = (breadBox*70) + breadOpen;
+   var freezerBread = (breadBox*80) + breadOpen;
    var freezerFlat = (flatBox*60) + (flatOpen*10);
    var freezerCross = (crossBox * 48) + (crossOpen * 12);
 
