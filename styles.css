@@ -44,3 +44,11 @@ h2{
   font-size: 1em!important;
   padding-top:2%!important;
 }
+
+h6{
+  display: inline-block;
+}
+
+.patchLink{
+  text-align: right;
+}
