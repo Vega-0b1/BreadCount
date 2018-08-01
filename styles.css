@@ -57,10 +57,11 @@ h6{
 .defaultsLink{
   position:relative;
   float:right;
-  margin-right:5%;
+  margin-right:3%;
 }
 
 .defaultInput input{
+  margin-left: 3%;
   width:30%;
 }
 

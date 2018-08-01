@@ -2,7 +2,6 @@ $( document ).ready(function() {
   loadDefaults();
   if(localStorage.getItem("defaults") != null) setSavedDefaults();
   populateDefaults();
-
 });
 
 var BreadBoxDefault, CroissantBoxDefault, CroissantTrayDefault, FlatBreadBoxDefault, FlatBreadBagDefault,
@@ -59,4 +58,5 @@ function saveDefault(){
   CroissantTrayDefault, WrapBoxDefault, WrapBagDefault, SaladBagDefault};
 
   localStorage.setItem("defaults", JSON.stringify(defaults));
+  alert("User Defaults Saved!");
 }
