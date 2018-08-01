@@ -1,7 +1,38 @@
 $( document ).ready(function() {
   addEvents();
-    if(localStorage.getItem("data") != null) populateFields();
+  setDefaults();
+  if(localStorage.getItem("defaults") != null) setSavedDefaults();
+  if(localStorage.getItem("data") != null) populateFields();
 });
+
+var BreadBoxDefault, CroissantBoxDefault, CroissantTrayDefault, FlatBreadBoxDefault, FlatBreadBagDefault,
+WrapBoxDefault, WrapBagDefault, SaladBagDefault;
+
+function setDefaults(){
+  BreadBoxDefault = 80;
+  CroissantBoxDefault = 48;
+  CroissantTrayDefault = 12;
+  FlatBreadBoxDefault = 60;
+  FlatBreadBagDefault = 10;
+  WrapBoxDefault = 72;
+  WrapBagDefault = 8;
+  SaladBagDefault = 56;
+}
+
+function setSavedDefaults(){
+  console.log("setting defaults");
+  var defaults = localStorage.getItem("defaults");
+  defaults = JSON.parse(defaults);
+
+  BreadBoxDefault = defaults["BreadBoxDefault"];
+  FlatBreadBoxDefault = defaults["FlatBreadBoxDefault"];
+  FlatBreadBagDefault = defaults["FlatBreadBagDefault"];
+  CroissantBoxDefault = defaults["CroissantBoxDefault"];
+  CroissantTrayDefault = defaults["CroissantTrayDefault"];
+  WrapBoxDefault = defaults["WrapBoxDefault"];
+  WrapBagDefault = defaults["WrapBagDefault"];
+  SaladBagDefault = defaults["SaladBagDefault"];
+}
 
 function countBread(){
    var breadBox = parseFloat(document.getElementById("breadBox").value);
@@ -58,11 +89,11 @@ function countBread(){
    var retarderBread = parseFloat(document.getElementById("retarderBread").value);
    if(isNaN(retarderBread))retarderBread = 0;
 
-   var saladTotal = (saladBag*56) + saladOpen;
-   var freezerWrap = (wrapBox*72) + (wrapOpen*8);
-   var freezerBread = (breadBox*80) + breadOpen;
-   var freezerFlat = (flatBox*60) + (flatOpen*10);
-   var freezerCross = (crossBox * 48) + (crossOpen * 12);
+   var saladTotal = (saladBag * SaladBagDefault) + saladOpen;
+   var freezerWrap = (wrapBox * WrapBoxDefault) + (wrapOpen * WrapBagDefault);
+   var freezerBread = (breadBox * BreadBoxDefault) + breadOpen;
+   var freezerFlat = (flatBox * FlatBreadBoxDefault) + (flatOpen * FlatBreadBagDefault);
+   var freezerCross = (crossBox * CroissantBoxDefault) + (crossOpen * CroissantTrayDefault);
 
    var breadTotal = freezerBread + retarderBread + breadFront1 + breadFront2;
    var flatTotal = freezerFlat + flatFront1 + flatFront2;
